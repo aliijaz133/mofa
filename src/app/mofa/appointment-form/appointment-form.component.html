@@ -1,0 +1,282 @@
+<main class="main-container">
+  <section>
+    <div class="image-caption-container">
+      <a routerLink="mofa/appointment-form"
+        ><img
+          src="../../../assets/image/mofa_logo.png"
+          alt="MOFA Logo"
+          class="mofa-logo"
+          style="width: 130px; height: auto; margin-bottom: 20px"
+      /></a>
+      <label style="text-transform: uppercase; font-weight: 700">
+        Ministy of foreign Affairs
+      </label>
+      <label style="text-transform: uppercase; font-weight: 700">
+        Government of Pakistan
+      </label>
+    </div>
+  </section>
+  <article>
+    <div class="form-container">
+      <form [formGroup]="userForm" (ngSubmit)="userData()">
+        <div class="name-container">
+          <!-- User First Name -->
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input
+                matInput
+                placeholder="Enter First Name"
+                formControlName="userFName"
+              />
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+            <div
+              *ngIf="
+                userForm.get('userFName')?.touched &&
+                userForm.get('userFName')?.invalid
+              "
+            >
+              <div *ngIf="userForm.get('userFName')?.hasError('required')">
+                <span style="color: red">This filed is required.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Last Name -->
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input
+                matInput
+                placeholder="Enter Last Name"
+                formControlName="userLName"
+              />
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+            <div
+              *ngIf="
+                userForm.get('userLName')?.touched &&
+                userForm.get('userLName')?.invalid
+              "
+            >
+              <div *ngIf="userForm.get('userLName')?.hasError('required')">
+                <span style="color: red">This filed is required.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cnic-mob__container">
+          <!-- User Mobile Number -->
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Mobile No</mat-label>
+              <input
+                matInput
+                placeholder="Enter Mobile Number"
+                formControlName="userContact"
+                (input)="formatPhoneNumber($event)"
+                maxlength="12"
+              />
+              <mat-icon matSuffix>call</mat-icon>
+            </mat-form-field>
+            <div
+              *ngIf="
+                userForm.get('userContact')?.touched &&
+                userForm.get('userContact')?.invalid
+              "
+            >
+              <div *ngIf="userForm.get('userContact')?.hasError('required')">
+                <span style="color: red">This filed is required.</span>
+              </div>
+              <div *ngIf="userForm.get('userContact')?.hasError('minlength')">
+                <span style="color: red"
+                  >Contact Number Should be 11 digit.</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- User CNIC Number -->
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>CNIC Number</mat-label>
+              <input
+                matInput
+                placeholder="Enter CNIC Number"
+                formControlName="userCnic"
+                (input)="formatCnicNumber($event)"
+                maxlength="15"
+              />
+              <mat-icon matSuffix>credit_card</mat-icon>
+            </mat-form-field>
+            <div
+              *ngIf="
+                userForm.get('userCnic')?.touched &&
+                userForm.get('userCnic')?.invalid
+              "
+            >
+              <div *ngIf="userForm.get('userCnic')?.hasError('required')">
+                <span style="color: red">This field is required.</span>
+              </div>
+              <div *ngIf="userForm.get('userCnic')?.hasError('minlength')">
+                <span style="color: red">CNIC Number Should be 13 digit.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Radio Buttons for Submitter of Documents -->
+        <div class="radion-btns" style="display: flex; flex-direction: column">
+          <label style="font-weight: 700; color: #000000"
+            >Submitter of Documents</label
+          >
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="submitterType"
+            style="display: flex; flex-direction: column"
+          >
+            <mat-radio-button value="In-Person" name="submitterType"
+              >In-Person</mat-radio-button
+            >
+            <mat-radio-button value="Blood Relative" name="submitterType"
+              >Blood Relative</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label
+                for="documentType"
+                style="font-weight: bold; color: #000000"
+                >Document Type</label
+              >
+              <div class="radio-group">
+                <!-- Education Group -->
+                <div>
+                  <mat-checkbox
+                    class="label"
+                    (change)="toggleEducationCheckboxes()"
+                    >Education Types</mat-checkbox
+                  >
+
+                  <div
+                    style="margin-left: 30px"
+                    class="additional-checkboxes"
+                    [style.display]="showEducationCheckboxes ? 'block' : 'none'"
+                  >
+                    <div style="display: flex; flex-direction: column">
+                      <mat-checkbox>HSSC/SSC</mat-checkbox>
+                      <mat-checkbox>BSC/MSc</mat-checkbox>
+                      <mat-checkbox>BBA/MBA</mat-checkbox>
+                      <mat-checkbox>MBBS/BDS</mat-checkbox>
+                      <mat-checkbox>Diploma</mat-checkbox>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Marriage Certificate -->
+                <div>
+                  <mat-checkbox (change)="toggleMarriageCheckboxes()"
+                    >Marriage Certificate</mat-checkbox
+                  >
+
+                  <div
+                    style="margin-left: 30px"
+                    class="additional-checkboxes"
+                    [style.display]="showMarriageCheckboxes ? 'block' : 'none'"
+                  >
+                    <div style="display: flex; flex-direction: column">
+                      <mat-checkbox>Nikkah Nama</mat-checkbox>
+
+                      <mat-checkbox>Marraige Certificate</mat-checkbox>
+
+                      <mat-checkbox>Dicvorce</mat-checkbox>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Medical Certificate -->
+                <div>
+                  <mat-checkbox (change)="toggleMedicalCheckboxes()"
+                    >Medical Certificate</mat-checkbox
+                  >
+                  <div
+                    style="margin-left: 30px"
+                    class="additional-checkboxes"
+                    [style.display]="showMedicalCheckboxes ? 'block' : 'none'"
+                  >
+                    <div style="display: flex; flex-direction: column">
+                      <mat-checkbox>Birth Certificate</mat-checkbox>
+
+                      <mat-checkbox>Death Certificate</mat-checkbox>
+
+                      <mat-checkbox>Polio Card</mat-checkbox>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Corporation -->
+                <div>
+                  <mat-checkbox (change)="toggleCorporationCheckboxes()"
+                    >Corporation</mat-checkbox
+                  >
+                  <div
+                    style="margin-left: 30px"
+                    class="additional-checkboxes"
+                    [style.display]="
+                      showCorporationCheckboxes ? 'block' : 'none'
+                    "
+                  >
+                    <div style="display: flex; flex-direction: column">
+                      <mat-checkbox>Company Corporation</mat-checkbox>
+
+                      <mat-checkbox>Company Registration</mat-checkbox>
+
+                      <mat-checkbox>Business Certificate</mat-checkbox>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Overseas -->
+                <div>
+                  <mat-checkbox (change)="toggleOverseasCheckboxes()"
+                    >Overseas</mat-checkbox
+                  >
+                  <div
+                    style="margin-left: 30px"
+                    class="additional-checkboxes"
+                    [style.display]="showOverseasCheckboxes ? 'block' : 'none'"
+                  >
+                    <div style="display: flex; flex-direction: column">
+                      <mat-checkbox>Passport</mat-checkbox>
+
+                      <mat-checkbox>Power of Attorney (Pakistan)</mat-checkbox>
+
+                      <mat-checkbox>Power of Attorney (Overseas)</mat-checkbox>
+                    </div>
+                  </div>
+                </div>
+
+                <mat-checkbox>Driving License Certificate</mat-checkbox>
+
+                <mat-checkbox>Police Clearance Certificate</mat-checkbox>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          mat-raised-button
+          type="submit"
+          color="primary"
+          [disabled]="userForm.invalid"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </article>
+</main>
