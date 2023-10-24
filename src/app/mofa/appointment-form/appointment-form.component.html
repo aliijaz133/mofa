@@ -251,11 +251,27 @@
                     [style.display]="showOverseasCheckboxes ? 'block' : 'none'"
                   >
                     <div style="display: flex; flex-direction: column">
-                      <mat-checkbox>Passport</mat-checkbox>
-
-                      <mat-checkbox>Power of Attorney (Pakistan)</mat-checkbox>
-
-                      <mat-checkbox>Power of Attorney (Overseas)</mat-checkbox>
+                      <mat-checkbox
+                        [checked]="showOverseasCheckboxes"
+                        (change)="
+                          showOverseasCheckboxes = showOverseasCheckboxes
+                        "
+                        >Passport</mat-checkbox
+                      >
+                      <mat-checkbox
+                        [checked]="showOverseasCheckboxes"
+                        (change)="
+                          showOverseasCheckboxes = showOverseasCheckboxes
+                        "
+                        >Power of Attorney (Pakistan)</mat-checkbox
+                      >
+                      <mat-checkbox
+                        [checked]="showOverseasCheckboxes"
+                        (change)="
+                          showOverseasCheckboxes = showOverseasCheckboxes
+                        "
+                        >Power of Attorney (Overseas)</mat-checkbox
+                      >
                     </div>
                   </div>
                 </div>

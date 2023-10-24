@@ -11,12 +11,14 @@ import { provideToastr } from 'ngx-toastr';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MofaComponent } from './mofa/mofa.component';
 
 
 
 @NgModule({
   declarations: [
     AppointmentFormComponent,
+    MofaComponent,
   ],
   imports: [
     CommonModule,

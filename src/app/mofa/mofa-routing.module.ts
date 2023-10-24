@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
+import { MofaComponent } from './mofa/mofa.component';
 
 const routes: Routes = [
   {
-    path: "appointment-form", component: AppointmentFormComponent
+    path: "home", component: MofaComponent
   },
   {
-    path: "**", redirectTo: "appointment-form", pathMatch: "full"
+    path: 'appointment-form', component: AppointmentFormComponent
+  }
+  ,
+  {
+    path: "**", redirectTo: "home", pathMatch: "full"
   }
 ];
 

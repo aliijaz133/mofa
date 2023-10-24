@@ -70,6 +70,7 @@ export class AppointmentFormComponent implements OnInit {
     this.showOverseasCheckboxes = !this.showOverseasCheckboxes;
   }
 
+
   userData() {
     console.log(this.userForm.value)
 
