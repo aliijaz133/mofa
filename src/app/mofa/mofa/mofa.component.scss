@@ -5,8 +5,6 @@
 
 .header {
   background-color: #003c1a;
-  margin: 0.2em 0;
-  position: -webkit-sticky;
   position: sticky;
   top: 0%;
   z-index: 1;
@@ -18,7 +16,6 @@
 
 .main-heading {
   font-size: 20px;
-  /* font-weight: bold; */
   color: #fff;
   border-bottom: 2px solid #000;
   background-color: #0086d0;
@@ -29,17 +26,13 @@
 .instruction-heading {
   color: #0086d0;
   font-size: 20px;
-  /* font-weight: bold; */
 }
 
 .warning {
-  color: red;
-  /* font-weight: bold; */
-}
+  color: red;}
 
 .success {
   color: green;
-  /* font-weight: bold; */
 }
 
 .paragraph {
@@ -59,7 +52,6 @@
   padding: 5px;
   text-align: center;
   width: 100%;
-  /* font-weight: bold; */
   font-size: 18px;
   margin-bottom: 10px;
 }
@@ -68,19 +60,10 @@
   padding: 5px;
   text-align: center;
   width: 100%;
-  /* font-weight: bold; */
   font-size: 18px;
 }
 
 .priority-section {
-  /* position: absolute;
-    bottom: 0%; */
-  /* margin: 0; */
-  margin-top: 10px;
-  padding: 30px;
-  /* width: -webkit-fill-available; */
-  /* background-color: #f8f8f8; */
-  /* background-color: #1ca0de; */
   background-color: #003c1a;
   text-align: center;
 }
@@ -91,13 +74,12 @@
 }
 
 .header-image {
-  width: 20%;
-  margin-left: 30px;
-  margin-top: 5px;
+  width: auto;
+  height: auto;
 }
 
 .priority-heading {
   color: #fff;
-  /* color: #282525; */
+  padding: 20px;
   font-size: 20px;
 }
