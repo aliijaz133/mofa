@@ -7,11 +7,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { provideToastr } from 'ngx-toastr';
+import { ToastrModule, provideToastr } from 'ngx-toastr';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MofaComponent } from './mofa/mofa.component';
+import { TimeSlotComponent } from './time-slot/time-slot.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -19,6 +21,8 @@ import { MofaComponent } from './mofa/mofa.component';
   declarations: [
     AppointmentFormComponent,
     MofaComponent,
+    TimeSlotComponent,
+    LoaderComponent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +35,9 @@ import { MofaComponent } from './mofa/mofa.component';
     MatButtonModule,
     MatRadioModule,
     MatCheckboxModule,
+    ToastrModule.forRoot(),
   ],
+
   providers: [provideToastr()]
 })
 export class MofaModule { }

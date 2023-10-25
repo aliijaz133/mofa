@@ -19,8 +19,10 @@
   color: #fff;
   border-bottom: 2px solid #000;
   background-color: #0086d0;
-  padding: 2% 10%;
+  padding: 15px;
   text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
 }
 
 .instruction-heading {
@@ -29,7 +31,8 @@
 }
 
 .warning {
-  color: red;}
+  color: red;
+}
 
 .success {
   color: green;
@@ -50,6 +53,7 @@
 
 .btn-appointment {
   padding: 5px;
+  text-transform: capitalize;
   text-align: center;
   width: 100%;
   font-size: 18px;
@@ -61,9 +65,12 @@
   text-align: center;
   width: 100%;
   font-size: 18px;
+  text-transform: capitalize;
 }
 
 .priority-section {
+  display: flex;
+  justify-content: center;
   background-color: #003c1a;
   text-align: center;
 }
@@ -82,4 +89,43 @@
   color: #fff;
   padding: 20px;
   font-size: 20px;
+}
+
+.calendar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.day-row {
+  padding: 15px;
+  border: 2px solid #000;
+  background-color: #0086d0;
+  color: #fff;
+  font-style: italic;
+  cursor: default;
+}
+
+.date-row {
+  padding: 15px;
+  border: 1px solid #000;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.date-row:hover {
+  background-color: rgb(3, 34, 34);
+  color: white;
+}
+
+.past-date {
+  background-color: #7a7575;
+  cursor: not-allowed;
+}
+
+.past-date:hover {
+  background-color: #7a7575;
+  color: #000;
 }

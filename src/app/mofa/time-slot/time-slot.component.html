@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="h2 text-center">Booking Appointment For 20 October-2023</h2>
+  <h3 class="h3 text-center">
+    Appointment Location: Constitution Ave, G-5/1 G-5, Islamabad, Islamabad
+    Capital Territory
+  </h3>
+
+  <div class="button-container">
+    <button class="btn btn-info btn-sx col-md-3">Go To Calendar</button>
+    <button class="btn btn-info btn-sx col-md-3">Search An Appointment</button>
+    <button class="btn btn-info btn-sx col-md-3">Go To Main Website</button>
+  </div>
+  <hr />
+
+  <div class="time-slot-container">
+    <div *ngFor="let slot of timeSlots">
+      <div class="time-slot" (click)="setAppointment(slot)">Available {{ slot }}</div>
+    </div>
+  </div>
+</div>
+
+<app-loader *ngIf="showLoader"></app-loader>
+
