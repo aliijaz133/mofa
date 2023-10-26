@@ -11,7 +11,10 @@
 }
 
 .headercell {
-  padding: 0 0 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .main-heading {
@@ -81,8 +84,10 @@
 }
 
 .header-image {
-  width: 100%;
+  width: 120px;
   height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .priority-heading {
@@ -114,7 +119,7 @@
   font-family: "Courier New", Courier, monospace;
   font-size: 1rem;
   font-weight: 700;
-  background-color: #61DE42;
+  background-color: #61de42;
   cursor: pointer;
 }
 
@@ -124,35 +129,36 @@
 }
 
 .past-date {
-  background-color: #D7D7D7;
+  background-color: #d7d7d7;
   cursor: not-allowed;
 }
 
 .past-date:hover {
-  background-color: #D7D7D7;
+  background-color: #d7d7d7;
   color: #000;
 }
 
-@media (max-width:860px) {
+@media (max-width: 860px) {
   .date-row {
     padding: 20px 40px;
   }
 }
 
-@media (max-width:725px) {
+@media (max-width: 725px) {
   .date-row {
     padding: 10px 30px;
   }
 }
 
 @media (max-width: 600px) {
-  .date-row{
+  .date-row {
     padding: 10px 10px;
   }
 }
 
 @media (max-width: 550px) {
-  .date-row, .day-row {
+  .date-row,
+  .day-row {
     padding: 5px;
   }
 }
