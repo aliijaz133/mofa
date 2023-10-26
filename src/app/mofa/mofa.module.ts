@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MofaRoutingModule } from './mofa-routing.module';
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -36,6 +36,7 @@ import { LoaderComponent } from './loader/loader.component';
     MatRadioModule,
     MatCheckboxModule,
     ToastrModule.forRoot(),
+    MatTooltipModule,
   ],
 
   providers: [provideToastr()]

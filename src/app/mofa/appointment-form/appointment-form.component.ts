@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 
@@ -14,6 +14,8 @@ export class AppointmentFormComponent implements OnInit {
   selectedDate: Date = new Date();
   selectedTime: string = '';
 
+  showLoader = false;
+
   showEducationCheckboxes: boolean = false;
   showMarriageCheckboxes: boolean = false;
   showMedicalCheckboxes: boolean = false;
@@ -21,7 +23,7 @@ export class AppointmentFormComponent implements OnInit {
   showOverseasCheckboxes: boolean = false;
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private toastr: ToastrService, private activatedRoute: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private toastr: ToastrService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.userForm = this.fb.group({
       userFName: new FormControl('', [Validators.required]),
       userLName: new FormControl('', [Validators.required]),
@@ -99,7 +101,19 @@ export class AppointmentFormComponent implements OnInit {
 
     this.userForm.reset()
 
+    this.showLoader = true;
+
+    setTimeout(()=>{
+      this.showLoader = false;
+
+      this.router.navigate(['/mofa/home'])
+    },2000);
+
+    this.router.navigate(['/mofa/home']);
+
     console.log(dataToSubmit)
+
+    
   }
 
   ngOnInit(): void {

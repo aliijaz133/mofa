@@ -18,21 +18,6 @@ export class TimeSlotComponent implements OnInit {
     this.generateTimeSlots();
     this.route.queryParams.subscribe((params) => {
       this.selectedDate = new Date(params['selectedDate']);
-      const selectedDateStr = params['selectedDate'];
-if (selectedDateStr) {
-  const date = new Date(selectedDateStr);
-  if (!isNaN(date.getTime())) {
-    // It's a valid date string
-    this.selectedDate = date;
-  } else {
-    // Handle the case when it's not a valid date
-    console.error('Invalid date format:', selectedDateStr);
-  }
-} else {
-  // Handle the case when 'selectedDate' is not provided
-  console.error('selectedDate is missing in queryParams');
-}
-
     });
   }
 
@@ -65,21 +50,21 @@ if (selectedDateStr) {
   setAppointment(selectedTime: string) {
     this.selectedTime = selectedTime;
     this.showLoader = true;
-  
+
     setTimeout(() => {
       this.showLoader = false;
-  
+
       this.router.navigate(['/mofa/appointment-form'], {
         queryParams: {
           selectedTime: this.selectedTime,
           selectedDate: this.selectedDate
         }
       });
-  
+
       this.toastr.info('Appointment Form');
-    });
+    }, 2000);
   }
-  
+
 
 
   goToCalendar() {
@@ -101,7 +86,7 @@ if (selectedDateStr) {
       } else {
         console.error('selectedDate is missing in queryParams');
       }
-      
+
 
       this.selectedTime = params['selectedTime'];
     });
