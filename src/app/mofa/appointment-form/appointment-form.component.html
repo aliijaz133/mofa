@@ -131,7 +131,12 @@
           <!-- Date Picker-->
           <div>
             <mat-form-field appearance="outline">
-              <input matInput readonly [value]="selectedDate | date:'shortDate'"/>
+              <input
+                matInput
+                readonly
+                [value]="selectedDate | date : 'dd-MMMM-YYYY'"
+                formControlName="selectedDate"
+              />
               <mat-icon matSuffix>date_range</mat-icon>
             </mat-form-field>
           </div>
@@ -139,7 +144,12 @@
           <!-- Time Picker -->
           <div>
             <mat-form-field appearance="outline">
-              <input matInput readonly [value]="selectedTime"/>
+              <input
+                matInput
+                readonly
+                [value]="selectedTime"
+                formControlName="selectedTime"
+              />
               <mat-icon matSuffix>watch_later</mat-icon>
             </mat-form-field>
           </div>

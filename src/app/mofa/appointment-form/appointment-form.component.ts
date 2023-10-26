@@ -11,8 +11,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AppointmentFormComponent implements OnInit {
 
-  selectedDate!: Date;
-  selectedTime!: string;
+  selectedDate: Date = new Date();
+  selectedTime: string = '';
 
   showEducationCheckboxes: boolean = false;
   showMarriageCheckboxes: boolean = false;
@@ -21,7 +21,7 @@ export class AppointmentFormComponent implements OnInit {
   showOverseasCheckboxes: boolean = false;
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private toastr: ToastrService,private activatedRoute: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private toastr: ToastrService, private activatedRoute: ActivatedRoute) {
     this.userForm = this.fb.group({
       userFName: new FormControl('', [Validators.required]),
       userLName: new FormControl('', [Validators.required]),
@@ -85,9 +85,21 @@ export class AppointmentFormComponent implements OnInit {
   userData() {
     console.log(this.userForm.value)
 
+    const formData = this.userForm.value;
+    const selectedTime = this.selectedTime;
+    const selectedDate = this.selectedDate;
+
+    const dataToSubmit = {
+      ...formData,
+      selectedTime,
+      selectedDate,
+    };
+
     this.toastr.success('', 'Successfully Submitted')
 
     this.userForm.reset()
+
+    console.log(dataToSubmit)
   }
 
   ngOnInit(): void {

@@ -18,7 +18,21 @@ export class TimeSlotComponent implements OnInit {
     this.generateTimeSlots();
     this.route.queryParams.subscribe((params) => {
       this.selectedDate = new Date(params['selectedDate']);
-      this.selectedTime = params['selectedTime'];
+      const selectedDateStr = params['selectedDate'];
+if (selectedDateStr) {
+  const date = new Date(selectedDateStr);
+  if (!isNaN(date.getTime())) {
+    // It's a valid date string
+    this.selectedDate = date;
+  } else {
+    // Handle the case when it's not a valid date
+    console.error('Invalid date format:', selectedDateStr);
+  }
+} else {
+  // Handle the case when 'selectedDate' is not provided
+  console.error('selectedDate is missing in queryParams');
+}
+
     });
   }
 
@@ -58,7 +72,7 @@ export class TimeSlotComponent implements OnInit {
       this.router.navigate(['/mofa/appointment-form'], {
         queryParams: {
           selectedTime: this.selectedTime,
-          selectedDate: this.selectedDate // This line is causing the error
+          selectedDate: this.selectedDate
         }
       });
   
@@ -74,7 +88,20 @@ export class TimeSlotComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      this.selectedDate = new Date(params['selectedDate']);
+      const selectedDateStr = params['selectedDate'];
+      if (selectedDateStr) {
+        const date = new Date(selectedDateStr);
+        if (!isNaN(date.getTime())) {
+
+          this.selectedDate = date;
+        } else {
+
+          console.error('Invalid date format:', selectedDateStr);
+        }
+      } else {
+        console.error('selectedDate is missing in queryParams');
+      }
+      
 
       this.selectedTime = params['selectedTime'];
     });
