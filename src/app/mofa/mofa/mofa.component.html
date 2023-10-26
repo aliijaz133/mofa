@@ -35,7 +35,13 @@
   </section>
 
   <div class="calendar">
-    <div style="background-color: aquamarine">
+    <div
+      style="
+        background-color: aquamarine;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+      "
+    >
       <h2
         style="
           text-align: center;
@@ -43,6 +49,9 @@
           color: white;
           margin-bottom: 0px;
           cursor: default;
+          padding: 10px;
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
         "
       >
         {{ selectedDate | date : "MMMM yyyy" }}

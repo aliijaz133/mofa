@@ -56,18 +56,18 @@ mat-form-field:focus {
 }
 
 .mat-mdc-radio-button.mat-accent {
-  --mdc-radio-disabled-selected-icon-color: #ffffff;
-  --mdc-radio-disabled-unselected-icon-color: #ffffff;
-  --mdc-radio-unselected-hover-icon-color: #ffffff;
-  --mdc-radio-unselected-icon-color: rgba(255, 255, 255, 0.54);
-  --mdc-radio-unselected-pressed-icon-color: #ffffff8a;
+  --mdc-radio-disabled-selected-icon-color: #000000;
+  --mdc-radio-disabled-unselected-icon-color: #000000;
+  --mdc-radio-unselected-hover-icon-color: #000000;
+  --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54);
+  --mdc-radio-unselected-pressed-icon-color: #0000008a;
   --mdc-radio-selected-focus-icon-color: #408cff;
   --mdc-radio-selected-hover-icon-color: #408cff;
   --mdc-radio-selected-icon-color: #408cff;
   --mdc-radio-selected-pressed-icon-color: #408cff;
-  --mat-radio-ripple-color: #ffffff;
+  --mat-radio-ripple-color: #000000;
   --mat-radio-checked-ripple-color: #408cff;
-  --mat-radio-disabled-label-color: rgba(255, 255, 255, 0.38);
+  --mat-radio-disabled-label-color: rgba(0, 0, 0, 0.38);
 }
 
 button[type="submit"]:disabled {
