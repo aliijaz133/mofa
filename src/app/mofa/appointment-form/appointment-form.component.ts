@@ -103,17 +103,17 @@ export class AppointmentFormComponent implements OnInit {
 
     this.showLoader = true;
 
-    setTimeout(()=>{
+    setTimeout(() => {
       this.showLoader = false;
 
       this.router.navigate(['/mofa/home'])
-    },2000);
+    }, 3000);
 
-    this.router.navigate(['/mofa/home']);
+    this.toastr.info("This site are automatically reloaded.");
 
     console.log(dataToSubmit)
 
-    
+
   }
 
   ngOnInit(): void {
