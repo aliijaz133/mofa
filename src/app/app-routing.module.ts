@@ -7,8 +7,7 @@ const routes: Routes = [
   },
   {
     path: "mofa", loadChildren: () => import('./mofa/mofa.module').then(m => m.MofaModule)
-  }
-  ,
+  },
   {
     path: "**", redirectTo: "mofa", pathMatch: "full"
   }

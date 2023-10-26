@@ -41,21 +41,24 @@ export class MofaComponent {
     if (this.isDateDisabled(date)) {
       return;
     }
-
+  
     this.selectedDate = date;
     this.generateCalendar();
-
+  
     this.showLoader = true;
-
+  
     setTimeout(() => {
       this.showLoader = false;
-
-      this.router.navigate(['/mofa/time-slot'])
+      this.router.navigate(['/mofa/time-slot'], {
+        queryParams: {
+          selectedDate: this.selectedDate.toISOString()
+        }
+      });
     }, 2000);
-
+  
     this.toastr.info('Select only one slot');
   }
-
+  
 
   isDateSelected(date: Date): boolean {
     return date.toDateString() === this.selectedDate.toDateString();

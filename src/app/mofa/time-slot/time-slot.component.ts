@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -7,15 +7,21 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './time-slot.component.html',
   styleUrls: ['./time-slot.component.scss']
 })
-export class TimeSlotComponent {
+export class TimeSlotComponent implements OnInit {
   timeSlots: string[] = [];
   selectedTime: string | null = null;
-
   showLoader = false;
+  selectedDate: Date = new Date();
 
-  constructor(private router: Router, private toastr: ToastrService) {
+
+  constructor(private router: Router, private route: ActivatedRoute, private toastr: ToastrService) {
     this.generateTimeSlots();
+    this.route.queryParams.subscribe((params) => {
+      this.selectedDate = new Date(params['selectedDate']);
+      this.selectedTime = params['selectedTime'];
+    });
   }
+
 
   generateTimeSlots() {
     const startTime = new Date();
@@ -28,7 +34,6 @@ export class TimeSlotComponent {
 
     while (startTime < endTime) {
       const formattedTime = this.formatTime(startTime);
-
       if (formattedTime !== this.selectedTime) {
         this.timeSlots.push(formattedTime);
       }
@@ -46,16 +51,32 @@ export class TimeSlotComponent {
   setAppointment(selectedTime: string) {
     this.selectedTime = selectedTime;
     this.showLoader = true;
-
+  
     setTimeout(() => {
       this.showLoader = false;
-
+  
       this.router.navigate(['/mofa/appointment-form'], {
-        queryParams: { selectedTime: this.selectedTime }
+        queryParams: {
+          selectedTime: this.selectedTime,
+          selectedDate: this.selectedDate // This line is causing the error
+        }
       });
-    }, 2000);
+  
+      this.toastr.info('Appointment Form');
+    });
+  }
+  
 
-    this.toastr.info('Appointment Form');
+
+  goToCalendar() {
+    this.router.navigate(['/home/mofa']);
   }
 
+  ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      this.selectedDate = new Date(params['selectedDate']);
+
+      this.selectedTime = params['selectedTime'];
+    });
+  }
 }

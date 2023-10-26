@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-appointment-form',
@@ -9,6 +11,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AppointmentFormComponent implements OnInit {
 
+  selectedDate!: Date;
+  selectedTime!: string;
 
   showEducationCheckboxes: boolean = false;
   showMarriageCheckboxes: boolean = false;
@@ -17,7 +21,7 @@ export class AppointmentFormComponent implements OnInit {
   showOverseasCheckboxes: boolean = false;
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private toastr: ToastrService) {
+  constructor(private fb: FormBuilder, private toastr: ToastrService,private activatedRoute: ActivatedRoute) {
     this.userForm = this.fb.group({
       userFName: new FormControl('', [Validators.required]),
       userLName: new FormControl('', [Validators.required]),
@@ -27,6 +31,13 @@ export class AppointmentFormComponent implements OnInit {
     });
 
     const userCnic = this.userForm.get('userCnic')?.value;
+
+    this.activatedRoute.queryParams.subscribe((params) => {
+      this.selectedDate = new Date(params['selectedDate']);
+      this.selectedTime = params['selectedTime'];
+
+    });
+
   }
 
   formatPhoneNumber(event: any) {

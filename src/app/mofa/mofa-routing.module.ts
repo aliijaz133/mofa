@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TimeSlotComponent } from './time-slot/time-slot.component';
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
 import { MofaComponent } from './mofa/mofa.component';
-import { TimeSlotComponent } from './time-slot/time-slot.component';
 
 const routes: Routes = [
   {
@@ -13,8 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'appointment-form', component: AppointmentFormComponent
-  }
-  ,
+  },
   {
     path: "**", redirectTo: "home", pathMatch: "full"
   }

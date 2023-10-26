@@ -126,6 +126,25 @@
           </div>
         </div>
 
+        <!-- Selected Time and Date Slot -->
+        <div class="name-container">
+          <!-- Date Picker-->
+          <div>
+            <mat-form-field appearance="outline">
+              <input matInput readonly [value]="selectedDate | date:'shortDate'"/>
+              <mat-icon matSuffix>date_range</mat-icon>
+            </mat-form-field>
+          </div>
+
+          <!-- Time Picker -->
+          <div>
+            <mat-form-field appearance="outline">
+              <input matInput readonly [value]="selectedTime"/>
+              <mat-icon matSuffix>watch_later</mat-icon>
+            </mat-form-field>
+          </div>
+        </div>
+
         <!-- Radio Buttons for Submitter of Documents -->
         <div class="radion-btns" style="display: flex; flex-direction: column">
           <label style="font-weight: 700; color: #000000"
@@ -169,11 +188,46 @@
                     [style.display]="showEducationCheckboxes ? 'block' : 'none'"
                   >
                     <div style="display: flex; flex-direction: column">
-                      <mat-checkbox [checked]="showEducationCheckboxes" (change)="showEducationCheckboxes = showEducationCheckboxes" color="primary">HSSC/SSC</mat-checkbox>
-                      <mat-checkbox [checked]="showEducationCheckboxes" (change)="showEducationCheckboxes = showEducationCheckboxes" color="primary">BSC/MSc</mat-checkbox>
-                      <mat-checkbox [checked]="showEducationCheckboxes" (change)="showEducationCheckboxes = showEducationCheckboxes" color="primary">BBA/MBA</mat-checkbox>
-                      <mat-checkbox [checked]="showEducationCheckboxes" (change)="showEducationCheckboxes = showEducationCheckboxes" color="primary">MBBS/BDS</mat-checkbox>
-                      <mat-checkbox [checked]="showEducationCheckboxes" (change)="showEducationCheckboxes = showEducationCheckboxes" color="primary">Diploma</mat-checkbox>
+                      <mat-checkbox
+                        [checked]="showEducationCheckboxes"
+                        (change)="
+                          showEducationCheckboxes = showEducationCheckboxes
+                        "
+                        color="primary"
+                        >HSSC/SSC</mat-checkbox
+                      >
+                      <mat-checkbox
+                        [checked]="showEducationCheckboxes"
+                        (change)="
+                          showEducationCheckboxes = showEducationCheckboxes
+                        "
+                        color="primary"
+                        >BSC/MSc</mat-checkbox
+                      >
+                      <mat-checkbox
+                        [checked]="showEducationCheckboxes"
+                        (change)="
+                          showEducationCheckboxes = showEducationCheckboxes
+                        "
+                        color="primary"
+                        >BBA/MBA</mat-checkbox
+                      >
+                      <mat-checkbox
+                        [checked]="showEducationCheckboxes"
+                        (change)="
+                          showEducationCheckboxes = showEducationCheckboxes
+                        "
+                        color="primary"
+                        >MBBS/BDS</mat-checkbox
+                      >
+                      <mat-checkbox
+                        [checked]="showEducationCheckboxes"
+                        (change)="
+                          showEducationCheckboxes = showEducationCheckboxes
+                        "
+                        color="primary"
+                        >Diploma</mat-checkbox
+                      >
                     </div>
                   </div>
                 </div>
@@ -312,14 +366,16 @@
           </div>
         </div>
 
-        <button
-          mat-raised-button
-          type="submit"
-          color="primary"
-          [disabled]="userForm.invalid"
-        >
-          Submit
-        </button>
+        <div style="display: flex; justify-content: center">
+          <button
+            mat-raised-button
+            type="submit"
+            color="primary"
+            [disabled]="userForm.invalid"
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   </article>
