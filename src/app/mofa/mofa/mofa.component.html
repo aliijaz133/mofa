@@ -49,14 +49,14 @@
           color: white;
           margin-bottom: 0px;
           cursor: default;
-          padding: 10px;
+          padding: 5px;
           border-top-right-radius: 10px;
           border-top-left-radius: 10px;
         "
       >
         {{ selectedDate | date : "MMMM yyyy" }}
       </h2>
-      <table>
+      <table class="table">
         <thead>
           <tr>
             <th *ngFor="let day of daysOfWeek" class="day-row">{{ day }}</th>

@@ -99,6 +99,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/mofa",
+            "netlifyToken": "9gHiloj7iycD4iWQkig3Ndu7KO92h5yQoUOQkBp0g3M",
+            "siteId": "mofa"
+          }
         }
       }
     }
