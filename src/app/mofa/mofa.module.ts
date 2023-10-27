@@ -14,6 +14,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MofaComponent } from './mofa/mofa.component';
 import { TimeSlotComponent } from './time-slot/time-slot.component';
 import { LoaderComponent } from './loader/loader.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -37,6 +38,7 @@ import { LoaderComponent } from './loader/loader.component';
     MatCheckboxModule,
     ToastrModule.forRoot(),
     MatTooltipModule,
+    HttpClientModule
   ],
 
   providers: [provideToastr()]
