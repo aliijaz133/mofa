@@ -31,7 +31,11 @@
 
 .radio-group {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.radio-group > div {
+  width: 200px;
 }
 
 mat-label {
