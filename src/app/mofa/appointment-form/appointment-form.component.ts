@@ -109,7 +109,7 @@ export class AppointmentFormComponent implements OnInit {
       this.router.navigate(['/mofa/home'])
     }, 3000);
 
-    this.toastr.info("This site are automatically reloaded.");
+    this.toastr.info("This site is automatically reloaded.");
 
     console.log(dataToSubmit)
 

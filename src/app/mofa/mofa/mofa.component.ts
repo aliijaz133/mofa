@@ -55,8 +55,6 @@ export class MofaComponent {
         }
       });
     }, 2000);
-  
-    this.toastr.info('Select only one slot');
   }
   
 
