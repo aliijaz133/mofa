@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
-import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 
 @NgModule({
   declarations: [
@@ -16,6 +16,7 @@ import { getAnalytics } from "firebase/analytics";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    provideFirebaseApp(() => initializeApp({})),
   ],
   providers: [provideToastr()],
   bootstrap: [AppComponent]

@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FirebaseApp} from '@angular/fire/app';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-appointment-form',
@@ -23,7 +25,7 @@ export class AppointmentFormComponent implements OnInit {
   showOverseasCheckboxes: boolean = false;
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private toastr: ToastrService, private activatedRoute: ActivatedRoute, private router: Router, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private toastr: ToastrService, private activatedRoute: ActivatedRoute, private router: Router, private http: HttpClient, private fireStore: FirebaseApp) {
     this.userForm = this.fb.group({
       userFName: new FormControl('', [Validators.required]),
       userLName: new FormControl('', [Validators.required]),
@@ -112,7 +114,6 @@ export class AppointmentFormComponent implements OnInit {
     this.toastr.info("This site is automatically reloaded.");
 
     console.log(dataToSubmit)
-
 
   }
 
