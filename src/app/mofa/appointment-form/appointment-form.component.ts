@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FirebaseApp} from '@angular/fire/app';
+import { FirebaseApp } from '@angular/fire/app';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -17,6 +17,8 @@ export class AppointmentFormComponent implements OnInit {
   selectedTime: string = '';
 
   showLoader = false;
+
+  dataSaving: string = "https://mofa-pak-default-rtdb.firebaseio.com";
 
   showEducationCheckboxes: boolean = false;
   showMarriageCheckboxes: boolean = false;
