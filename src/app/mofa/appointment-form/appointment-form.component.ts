@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FirebaseApp } from '@angular/fire/app';
+
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-
 
 @Component({
   selector: 'app-appointment-form',
@@ -89,8 +89,6 @@ export class AppointmentFormComponent implements OnInit {
 
 
   userData() {
-    console.log(this.userForm.value)
-
     const formData = this.userForm.value;
     const selectedTime = this.selectedTime;
     const selectedDate = this.selectedDate;

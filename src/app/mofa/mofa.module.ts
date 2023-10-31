@@ -15,9 +15,6 @@ import { MofaComponent } from './mofa/mofa.component';
 import { TimeSlotComponent } from './time-slot/time-slot.component';
 import { LoaderComponent } from './loader/loader.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFireModule } from '@angular/fire/compat'
-import { environment } from 'src/environment/environment.development';
-
 
 
 @NgModule({
@@ -41,7 +38,6 @@ import { environment } from 'src/environment/environment.development';
     ToastrModule.forRoot(),
     MatTooltipModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment)
   ],
 
   providers: [provideToastr()]
