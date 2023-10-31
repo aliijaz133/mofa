@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as moment from 'moment';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -33,6 +34,8 @@ export class AppointmentFormComponent implements OnInit {
       userContact: new FormControl('', [Validators.required, Validators.minLength(12)]),
       userCnic: new FormControl('', [Validators.required, Validators.minLength(14)]),
       submitterType: new FormControl('', [Validators.required]),
+      selectedDate: new FormControl('', [Validators.required]),
+      selectedTime: new FormControl('', [Validators.required]),
     });
 
     const userCnic = this.userForm.get('userCnic')?.value;
@@ -89,7 +92,7 @@ export class AppointmentFormComponent implements OnInit {
 
   userData() {
     const formData = this.userForm.value;
-    const selectedTime = this.selectedTime;
+    const selectedTime = moment(this.selectedDate).format('DD-MMM-YYYY')
     const selectedDate = this.selectedDate;
 
     const dataToSubmit = {
@@ -118,6 +121,9 @@ export class AppointmentFormComponent implements OnInit {
 
   ngOnInit(): void {
 
+    let date = moment(this.selectedDate).format('DD-MMM-YYYY');
+    this.userForm.controls['selectedDate'].setValue(date)
+    this.userForm.controls['selectedTime'].setValue(this.selectedTime)
   }
 
 }
