@@ -114,7 +114,7 @@ export class AppointmentFormComponent implements OnInit {
     }, 3000);
 
     this.toastr.info("This site is automatically reloaded.");
-
+    
     console.log(dataToSubmit)
 
   }
