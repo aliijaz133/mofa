@@ -15,7 +15,12 @@ import { MofaComponent } from './mofa/mofa.component';
 import { TimeSlotComponent } from './time-slot/time-slot.component';
 import { LoaderComponent } from './loader/loader.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { configfirebase } from 'src/environment/environment';
 
 @NgModule({
   declarations: [
@@ -38,6 +43,12 @@ import { HttpClientModule } from '@angular/common/http';
     ToastrModule.forRoot(),
     MatTooltipModule,
     HttpClientModule,
+
+    provideFirebaseApp(() => initializeApp(configfirebase)),
+    provideAuth(() => getAuth()),
+    AngularFireModule.initializeApp(configfirebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
 
   providers: [provideToastr()]

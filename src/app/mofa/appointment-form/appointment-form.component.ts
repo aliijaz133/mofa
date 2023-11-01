@@ -1,10 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { ToastrService } from 'ngx-toastr';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
+
+
 
 @Component({
   selector: 'app-appointment-form',
@@ -27,7 +30,7 @@ export class AppointmentFormComponent implements OnInit {
   showOverseasCheckboxes: boolean = false;
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private toastr: ToastrService, private activatedRoute: ActivatedRoute, private router: Router, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private toastr: ToastrService, private activatedRoute: ActivatedRoute, private router: Router, private http: HttpClient, private db: AngularFirestore) {
     this.userForm = this.fb.group({
       userFName: new FormControl('', [Validators.required]),
       userLName: new FormControl('', [Validators.required]),
@@ -89,11 +92,10 @@ export class AppointmentFormComponent implements OnInit {
     this.showOverseasCheckboxes = !this.showOverseasCheckboxes;
   }
 
-
   userData() {
     const formData = this.userForm.value;
-    const selectedTime = moment(this.selectedDate).format('DD-MMM-YYYY')
-    const selectedDate = this.selectedDate;
+    const selectedTime = this.selectedTime;
+    const selectedDate = moment(this.selectedDate).format('DD-MMM-YYYY');
 
     const dataToSubmit = {
       ...formData,
@@ -101,23 +103,21 @@ export class AppointmentFormComponent implements OnInit {
       selectedDate,
     };
 
-    this.toastr.success('', 'Successfully Submitted')
+    this.db.collection('your-collection-name').add(dataToSubmit).then(() => {
+      this.toastr.success('', 'Successfully Submitted');
+      this.userForm.reset();
+      this.showLoader = true;
 
-    this.userForm.reset()
+      setTimeout(() => {
+        this.showLoader = false;
+        this.router.navigate(['/mofa/home']);
+      }, 3000);
 
-    this.showLoader = true;
-
-    setTimeout(() => {
-      this.showLoader = false;
-
-      this.router.navigate(['/mofa/home'])
-    }, 3000);
-
-    this.toastr.info("This site is automatically reloaded.");
-    
-    console.log(dataToSubmit)
-
+      this.toastr.info('This site is automatically reloaded.');
+      console.log(dataToSubmit);
+    });
   }
+
 
   ngOnInit(): void {
 
