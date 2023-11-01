@@ -29,8 +29,8 @@ export class TimeSlotComponent implements OnInit {
     endTime.setHours(13, 0, 0, 0);
 
     const interval = 2;
-    
-    const timeSlot = ["12:16", "12: 44", "09:04"];
+
+    const timeSlot = ["12:16", "12:44", "09:04"];
 
     while (startTime < endTime) {
       const formattedTime = this.formatTime(startTime);
@@ -49,21 +49,26 @@ export class TimeSlotComponent implements OnInit {
   }
 
   setAppointment(selectedTime: string) {
-    this.selectedTime = selectedTime;
-    this.showLoader = true;
+    if (this.isTimeSlotInArray(selectedTime)) {
 
-    setTimeout(() => {
-      this.showLoader = false;
+      this.toastr.warning('This time slot is not available for appointment');
+    } else {
+      this.selectedTime = selectedTime;
+      this.showLoader = true;
 
-      this.router.navigate(['/mofa/appointment-form'], {
-        queryParams: {
-          selectedTime: this.selectedTime,
-          selectedDate: this.selectedDate
-        }
-      });
+      setTimeout(() => {
+        this.showLoader = false;
 
-      this.toastr.info('Appointment Form');
-    }, 2000);
+        this.router.navigate(['/mofa/appointment-form'], {
+          queryParams: {
+            selectedTime: this.selectedTime,
+            selectedDate: this.selectedDate.toISOString()
+          }
+        });
+
+        this.toastr.info('Appointment Form');
+      }, 2000);
+    }
   }
 
   isTimeSlotInArray(slot: string): boolean {

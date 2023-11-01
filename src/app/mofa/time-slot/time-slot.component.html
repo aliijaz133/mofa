@@ -18,9 +18,11 @@
       <div
         class="time-slot"
         (click)="setAppointment(slot)"
-        matTooltip="Select Time"
+        [matTooltip]="
+          isTimeSlotInArray(slot) ? 'Time not Available' : 'Time Available'
+        "
         [ngStyle]="{
-          'background-color': isTimeSlotInArray(slot) ? 'red' : '',
+          'background-color': isTimeSlotInArray(slot) ? 'gray' : '',
           cursor: isTimeSlotInArray(slot) ? 'not-allowed' : 'pointer'
         }"
       >
