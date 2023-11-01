@@ -18,8 +18,10 @@ export class MofaComponent {
   }
 
   generateCalendar() {
-    const firstDay = new Date(this.selectedDate.getFullYear(), this.selectedDate.getMonth(), 1);
-    const lastDay = new Date(this.selectedDate.getFullYear(), this.selectedDate.getMonth() + 1, 0);
+    const year = this.selectedDate.getFullYear();
+    const month = this.selectedDate.getMonth();
+    const firstDay = new Date(year, month, 1);
+    const lastDay = new Date(year, month + 1, 0);
     const daysInMonth = lastDay.getDate();
     const day = new Date(firstDay);
 
