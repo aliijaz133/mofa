@@ -103,7 +103,8 @@ export class AppointmentFormComponent implements OnInit {
       selectedDate,
     };
 
-    this.db.collection('your-collection-name').add(dataToSubmit).then(() => {
+
+    this.db.collection('Mofa Form').add(dataToSubmit).then(() => {
       this.toastr.success('', 'Successfully Submitted');
       this.userForm.reset();
       this.showLoader = true;
@@ -114,8 +115,8 @@ export class AppointmentFormComponent implements OnInit {
       }, 3000);
 
       this.toastr.info('This site is automatically reloaded.');
-      console.log(dataToSubmit);
     });
+
   }
 
 
