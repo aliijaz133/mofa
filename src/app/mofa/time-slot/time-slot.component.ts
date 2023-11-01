@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -13,8 +13,7 @@ export class TimeSlotComponent implements OnInit {
   showLoader = false;
   selectedDate: Date = new Date();
 
-
-  constructor(private router: Router, private route: ActivatedRoute, private toastr: ToastrService) {
+  constructor(private router: Router, private route: ActivatedRoute, private toastr: ToastrService, private el: ElementRef) {
     this.generateTimeSlots();
     this.route.queryParams.subscribe((params) => {
       this.selectedDate = new Date(params['selectedDate']);
@@ -30,6 +29,8 @@ export class TimeSlotComponent implements OnInit {
     endTime.setHours(13, 0, 0, 0);
 
     const interval = 2;
+    
+    const timeSlot = ["12:16", "12: 44", "09:04"];
 
     while (startTime < endTime) {
       const formattedTime = this.formatTime(startTime);
@@ -65,7 +66,10 @@ export class TimeSlotComponent implements OnInit {
     }, 2000);
   }
 
-
+  isTimeSlotInArray(slot: string): boolean {
+    const timeSlot = ["12:16", "12:44", "09:04"];
+    return timeSlot.includes(slot);
+  }
 
   goToCalendar() {
     this.router.navigate(['/home/mofa']);
