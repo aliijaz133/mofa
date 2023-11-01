@@ -64,6 +64,7 @@ export class MofaComponent {
     const currentDate = new Date();
     currentDate.setHours(0, 0, 0, 0);
 
-    return date < currentDate || date.getDay() === 0 || date.getDay() === 6;
+    // return date < currentDate || date.getDay() === 0 || date.getDay() === 6;
+    return date < currentDate;
   }
 }
