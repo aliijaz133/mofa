@@ -1,0 +1,88 @@
+<div class="main-container">
+  <div class="secondary-container">
+    <div class="logo-container">
+      <img src="../../../assets/image/Ministry Office Logo.png" alt="Logo" />
+      <div class="label-container">
+        <p>MINISTY OF FOREIGN AFFAIRS</p>
+        <p>GOVERNMENT OF PAKISTAN</p>
+      </div>
+    </div>
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="userLogin()"
+      class="login-container"
+    >
+      <label style="text-align: left; font-weight: 700; font-size: 1.2rem"
+        >Log In</label
+      >
+      <label style="text-align: left; font-size: 12px; margin-top: 5px"
+        >Please enter you credentials to log in.</label
+      >
+      <div class="email-container">
+        <mat-form-field class="w-100-p" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Enter Email"
+            formControlName="userEmail"
+            autocomplete="off"
+          />
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+        <div
+          *ngIf="
+            loginForm.get('userEmail')?.touched &&
+            loginForm.get('userEmail')?.invalid
+          "
+          class="invalid-field"
+        >
+          <span *ngIf="loginForm.get('userEmail')?.hasError('required')"
+            >This field is required.</span
+          >
+          <span *ngIf="loginForm.get('userEmail')?.hasError('email')"
+            >This email format is invalid.</span
+          >
+        </div>
+      </div>
+      <mat-form-field class="w-100-p" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          formControlName="userPwd"
+          autocomplete="off"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div
+        class="invalid-field"
+        *ngIf="
+          loginForm.get('userPwd')?.touched && loginForm.get('userPwd')?.invalid
+        "
+      >
+        <span *ngIf="loginForm.get('userPwd')?.hasError('required')">
+          This field is required.
+        </span>
+        <span *ngIf="loginForm.get('userPwd')?.hasError('minlength')">
+          Password length sould be atleast 8 character.
+        </span>
+      </div>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</div>

@@ -67,4 +67,8 @@ export class MofaComponent {
     // return date < currentDate || date.getDay() === 0 || date.getDay() === 6;
     return date < currentDate;
   }
+
+  adminLogin() {
+    this.router.navigate(['/mofa-admin/admin-login'])
+  }
 }

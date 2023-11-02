@@ -4,6 +4,9 @@
 }
 
 .header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #003c1a;
   position: sticky;
   top: 0%;
@@ -84,7 +87,7 @@
 }
 
 .header-image {
-  width: 120px;
+  width: 100px;
   height: auto;
   margin-top: 10px;
   margin-bottom: 10px;

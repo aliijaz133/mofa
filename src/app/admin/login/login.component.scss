@@ -1,0 +1,97 @@
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  height: 100vh;
+}
+
+.secondary-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 7px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.w-100-p {
+  width: 25vw !important;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 20px;
+  background-color: #ededed;
+  border-radius: 10px;
+  gap: 20px;
+}
+
+.logo-container img {
+  width: 100px; /* Adjust the width as needed */
+}
+
+.label-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+p {
+  margin: 0 0 0px;
+}
+
+.invalid-field {
+  font-size: small;
+  color: #ff0000;
+  margin-top: -15px;
+  margin-bottom: 5px;
+}
+
+.email-container {
+  margin-top: 10px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.input-container input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+mat-icon {
+  color: #9b9b9b;
+}
+
+.input-container button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.login-button {
+  background-color: #007bff; /* Change to your desired button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
