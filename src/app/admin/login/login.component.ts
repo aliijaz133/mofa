@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   email: string = "aliijaz@gmail.com";
   password: string = "abcd1234";
 
-  constructor(private fb: FormBuilder, private titlePage: Title, private router: Router) {
+  constructor(private fb: FormBuilder, private titlePage: Title, private router: Router, private toastr: ToastrService) {
     this.loginForm = this.fb.group({
       userEmail: new FormControl('', [Validators.required, Validators.email]),
       userPwd: new FormControl('', [Validators.required, Validators.minLength(8)]),
@@ -34,8 +35,12 @@ export class LoginComponent implements OnInit {
   }
 
   userLogin() {
-    if (this.loginForm.value === this.email && this.loginForm.value === this.password) {
-      this.router.navigate(['/mofa-admin/user-dashboard'])
+    if (this.loginForm.value.userEmail === this.email && this.loginForm.value.userPwd === this.password) {
+      this.router.navigate(['/mofa-admin/user-dashboard'], { queryParams: this.email.split(this.loginForm.value.userEmail) });
+      this.toastr.success("Successfully Logged In")
+    }
+    else {
+      this.toastr.error("Login Failed");
     }
   }
 

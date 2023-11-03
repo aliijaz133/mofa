@@ -9,6 +9,9 @@ const routes: Routes = [
     path: "mofa", loadChildren: () => import('./mofa/mofa.module').then(m => m.MofaModule)
   },
   {
+    path: "admin-login", loadChildren: () => import('./admin/admin.module').then(a => a.AdminModule)
+  },
+  {
     path: 'mofa-admin', loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then(d => d.AdminDashboardModule)
   },
   {

@@ -69,6 +69,6 @@ export class MofaComponent {
   }
 
   adminLogin() {
-    this.router.navigate(['/mofa-admin/admin-login'])
+    this.router.navigate(['/admin-login/login'])
   }
 }
