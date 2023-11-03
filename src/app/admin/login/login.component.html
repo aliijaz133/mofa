@@ -19,7 +19,15 @@
         >Please enter you credentials to log in.</label
       >
       <div class="email-container">
-        <mat-form-field class="w-100-p" appearance="outline">
+        <mat-form-field
+          class="w-100-p"
+          appearance="outline"
+          style="
+            height: 50px !important;
+            margin-bottom: 20px;
+            border-radius: 10px !important;
+          "
+        >
           <mat-label>Email</mat-label>
           <input
             matInput
@@ -52,15 +60,16 @@
           formControlName="userPwd"
           autocomplete="off"
         />
-        <button
+        <span
           mat-icon-button
           matSuffix
           (click)="hide = !hide"
           [attr.aria-label]="'Hide password'"
           [attr.aria-pressed]="hide"
+          style="cursor: pointer; margin-right: 12px"
         >
           <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-        </button>
+        </span>
       </mat-form-field>
       <div
         class="invalid-field"

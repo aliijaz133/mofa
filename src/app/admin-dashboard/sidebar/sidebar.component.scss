@@ -1,0 +1,33 @@
+.offcanvas {
+  width: 300px !important;
+}
+
+.offcanvas-header {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.offcanvas-body {
+  padding: 0% !important;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  .logo_title {
+    display: grid;
+    grid-template-columns: 30px auto;
+    column-gap: 10px;
+    border-bottom: 1px solid LightGray;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-top: 16px;
+    padding-left: 15px;
+  }
+}
+
+.logo_title:hover {
+  background-color: lavender;
+}

@@ -1,1 +1,48 @@
-<p>sidebar works!</p>
+<div
+  class="offcanvas offcanvas-start"
+  data-bs-backdrop="static"
+  tabindex="-1"
+  id="staticBackdrop"
+  aria-labelledby="staticBackdropLabel"
+>
+  <div class="offcanvas-header">
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="menu-container">
+      <div class="logo_title" (click)="dashBoard()">
+        <img src="../../../assets/image/dashboard_black.svg" alt="Dashboard" />
+        <h4>Dashboard</h4>
+      </div>
+      <div class="logo_title">
+        <img src="../../../assets/image/audit_black.svg" alt="Dashboard" />
+        <h4>Appointment</h4>
+      </div>
+      <div class="logo_title">
+        <img
+          src="../../../assets/image/accident_reporting_black.svg"
+          alt="Dashboard"
+        />
+        <h4>Reports</h4>
+      </div>
+      <div class="logo_title">
+        <mat-icon>settings</mat-icon>
+        <h4>Setting</h4>
+      </div>
+      <div class="logo_title" (click)="updatePassword()">
+        <img src="../../../assets/image/user_lock_blcak.svg" alt="Dashboard" />
+        <h4>Change Password</h4>
+      </div>
+      <div class="logo_title" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <h4>Logout</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
