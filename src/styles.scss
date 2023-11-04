@@ -26,4 +26,31 @@ body {
   color: white;
 }
 
+/* Define the styles for the scrollbar track (background) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* Define the styles for the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the thumb */
+  border-radius: 6px; /* Round the corners of the thumb */
+}
+
+/* Define the styles for the scrollbar track when the mouse hovers over it */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color on hover */
+}
+
+/* Define the styles for the scrollbar track (background) when the mouse hovers over it */
+::-webkit-scrollbar-track {
+  background: #eee; /* Color of the scrollbar track */
+}
+
+/* Define the styles for the scrollbar corner */
+::-webkit-scrollbar-corner {
+  background: #fff; /* Color of the scrollbar corner */
+}
+
+
 @import "ngx-toastr/toastr";
