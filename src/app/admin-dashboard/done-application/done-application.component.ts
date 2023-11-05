@@ -65,11 +65,14 @@ export class DoneApplicationComponent implements OnInit {
     series.sequencedInterpolation = true;
     series.fillOpacity = 0;
     series.strokeOpacity = 1;
-    // series.strokeDashArray = "1,3";
+
     series.columns.template.width = 0.01;
-    // series.tooltip.pointerOrientation = "horizontal";
+
+    series.stroke = am4core.color("green");
 
     let bullet = series.bullets.create(am4charts.CircleBullet);
+    
+    bullet.fill = am4core.color("green");
 
     chart.cursor = new am4charts.XYCursor();
 

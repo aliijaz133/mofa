@@ -97,6 +97,8 @@ export class CancelledApplicationComponent implements OnInit {
           }
         }
       });
+
+      columnTemplate.fill = am4core.color('green');
     }
 
     createSeries("rejected", "rejected");
@@ -112,6 +114,8 @@ export class CancelledApplicationComponent implements OnInit {
             let dataContext = seriesItem.dataContext as ChartData;
             indexes[dataContext.country] = seriesItem.index;
           });
+
+          series.fill = am4core.color('green');
 
           categoryAxis.dataItems.values.sort(function (a, b) {
             let ai = indexes[a.category];

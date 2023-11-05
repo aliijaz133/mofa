@@ -39,6 +39,8 @@ export class TotalApplicationComponent implements OnInit {
     let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
     dateAxis.renderer.minGridDistance = 60;
 
+    dateAxis.fill = am4core.color('green');
+
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
     let series = chart.series.push(new am4charts.LineSeries());
@@ -46,12 +48,17 @@ export class TotalApplicationComponent implements OnInit {
     series.dataFields.dateX = "date";
     series.tooltipText = "{value}"
 
+    series.fill = am4core.color('black');
+
+
+    series.stroke = am4core.color('green');
 
     chart.cursor = new am4charts.XYCursor();
     chart.cursor.snapToSeries = series;
     chart.cursor.xAxis = dateAxis;
 
     chart.scrollbarX = new am4core.Scrollbar();
+
 
   }
 }

@@ -51,6 +51,8 @@ export class PendingApplicationComponent implements OnInit {
       return dy;
     });
 
+    categoryAxis.fill = am4core.color('green');
+
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
     let series = chart.series.push(new am4charts.ColumnSeries());
@@ -59,6 +61,8 @@ export class PendingApplicationComponent implements OnInit {
     series.name = "Visits";
     series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}[/]";
     series.columns.template.fillOpacity = .8;
+
+    series.fill = am4core.color('green');
 
     let columnTemplate = series.columns.template;
     columnTemplate.strokeWidth = 2;

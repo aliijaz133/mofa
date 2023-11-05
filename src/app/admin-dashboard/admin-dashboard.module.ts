@@ -15,6 +15,10 @@ import { TotalApplicationComponent } from './total-application/total-application
 import { DoneApplicationComponent } from './done-application/done-application.component';
 import { PendingApplicationComponent } from './pending-application/pending-application.component';
 import { CancelledApplicationComponent } from './cancelled-application/cancelled-application.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ToastrModule, provideToastr } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,12 @@ import { CancelledApplicationComponent } from './cancelled-application/cancelled
     MatBadgeModule,
     MatButtonModule,
     MatMenuModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ToastrModule.forRoot(),
   ]
 })
 export class AdminDashboardModule { }
