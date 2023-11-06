@@ -84,12 +84,8 @@ export class HeaderComponent {
     // this.userIdentity = user
   }
 
-
-  setting() {
-    // this.router.navigateByUrl('pickup/settings');
-  }
   userProfile() {
-    // this.router.navigateByUrl('pickup/user-management/user-profile')
+    this.router.navigate(['/mofa-admin/setting']);
   }
   // firebase signout 
   SignOut() {

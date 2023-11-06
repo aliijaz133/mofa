@@ -25,4 +25,9 @@ export class SidebarComponent implements OnInit {
     this.router.navigate(['/mofa-admin/change-password'])
   }
 
+  setting()
+  {
+    this.router.navigate(['/mofa-admin/setting'])
+  }
+
 }

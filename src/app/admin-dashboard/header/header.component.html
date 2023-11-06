@@ -3,7 +3,7 @@
     <div class="header">
       <div class="nav">
         <div class="header-block">
-          <div style="display: flex; align-items: center; gap: 20px">
+          <div class="menu-c">
             <img
               src="../../../assets/image/Ministry Office Logo.png"
               width="80px"
@@ -12,7 +12,7 @@
             />
             <button
               mat-raised-button
-              class="btn-icon"
+              class="btn-icon menu-btn"
               matTooltip="Menu"
               type="button"
               data-bs-toggle="offcanvas"
@@ -26,11 +26,6 @@
             </button>
           </div>
           <div class="userprofile">
-            <button mat-raised-button class="btn-icon" (click)="setting()">
-              <mat-icon style="color: #9dacb4; cursor: pointer; margin: 0px"
-                >settings</mat-icon
-              >
-            </button>
             <button
               mat-raised-button
               matBadge="{{ alert_count }}"

@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ToastrModule, provideToastr } from 'ngx-toastr';
+import { SettingComponent } from './setting/setting.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ToastrModule, provideToastr } from 'ngx-toastr';
     TotalApplicationComponent,
     DoneApplicationComponent,
     PendingApplicationComponent,
-    CancelledApplicationComponent
+    CancelledApplicationComponent,
+    SettingComponent
   ],
   imports: [
     CommonModule,

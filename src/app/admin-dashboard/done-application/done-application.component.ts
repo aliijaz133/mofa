@@ -54,7 +54,7 @@ export class DoneApplicationComponent implements OnInit {
     })
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-    // valueAxis.tooltip.disabled = true;
+
     valueAxis.renderer.ticks.template.disabled = true;
     valueAxis.renderer.axisFills.template.disabled = true;
 

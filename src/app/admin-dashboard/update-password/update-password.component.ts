@@ -15,10 +15,10 @@ export class UpdatePasswordComponent implements OnInit {
     this.passwordUpdating = this.fb.group({
       userCurrentPwd: new FormControl('', [Validators.required]),
       newPwd: new FormControl('', [
-        Validators.required,
+        Validators.required, Validators.minLength(8),
         Validators.pattern(/^(?=.*\d)(?=.*[a-zA-Z]).{4,}$/)
       ]),
-      confirmNewPwd: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-zA-Z]).{4,}$/)]),
+      confirmNewPwd: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*\d)(?=.*[a-zA-Z]).{4,}$/)]),
     });
   }
 
