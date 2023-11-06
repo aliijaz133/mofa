@@ -68,7 +68,7 @@ export class HeaderComponent {
     // this.SignOut();
 
     // if (val) {
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/admin-login/login');
     // } else {
     // localStorage.setItem('setvalue', "false");
     // this.router.navigateByUrl('/login');

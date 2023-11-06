@@ -21,7 +21,6 @@ export class TotalApplicationComponent implements OnInit {
   }
 
   createChart() {
-    console.log("Shoe")
     let chart = am4core.create("chartdiv", am4charts.XYChart);
 
     let data = [];
