@@ -16,11 +16,14 @@ import { DoneApplicationComponent } from './done-application/done-application.co
 import { PendingApplicationComponent } from './pending-application/pending-application.component';
 import { CancelledApplicationComponent } from './cancelled-application/cancelled-application.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { ToastrModule, provideToastr } from 'ngx-toastr';
 import { SettingComponent } from './setting/setting.component';
-
+import { AppointmentComponent } from './appointment/appointment.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { ExportAsModule } from 'ngx-export-as';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -31,7 +34,8 @@ import { SettingComponent } from './setting/setting.component';
     DoneApplicationComponent,
     PendingApplicationComponent,
     CancelledApplicationComponent,
-    SettingComponent
+    SettingComponent,
+    AppointmentComponent
   ],
   imports: [
     CommonModule,
@@ -46,6 +50,9 @@ import { SettingComponent } from './setting/setting.component';
     MatInputModule,
     MatFormFieldModule,
     ToastrModule.forRoot(),
+    MatPaginatorModule,
+    MatTableModule,
+    ExportAsModule
   ]
 })
 export class AdminDashboardModule { }

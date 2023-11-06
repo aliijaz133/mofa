@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { SettingComponent } from './setting/setting.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,9 @@ const routes: Routes = [
   },
   {
     path: 'setting', component: SettingComponent
+  },
+  {
+    path: 'appointment', component: AppointmentComponent
   }
 ];
 
