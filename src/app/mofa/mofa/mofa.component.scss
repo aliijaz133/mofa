@@ -99,6 +99,12 @@
   font-size: 20px;
 }
 
+.table {
+  border-left: 2px solid #b7b7b7;
+  border-right: 2px solid #b7b7b7;
+  border-bottom: 2px solid #b7b7b7;
+}
+
 .calendar {
   display: flex;
   justify-content: center;
@@ -107,10 +113,10 @@
 }
 
 .day-row {
-  padding: 15px;
+  padding: 20px;
   border: 1px solid #fff;
-  background-color: #7fc2e7;
-  color: #41509b;
+  background-color: #7c8083;
+  color: #ffffff;
   text-align: center;
   font-size: 1rem;
   cursor: default;
@@ -122,23 +128,25 @@
   font-family: "Courier New", Courier, monospace;
   font-size: 1rem;
   font-weight: 700;
-  background-color: #61de42;
+  background-color: #67c0db;
+  color: #000;
   cursor: pointer;
 }
 
 .date-row:hover {
-  background-color: #2b6e1a;
+  background-color: orange;
   color: white;
 }
 
 .past-date {
-  background-color: #d7d7d7;
+  background-color: #d9d9d9;
+  color: #817d7b;
   cursor: not-allowed;
 }
 
 .past-date:hover {
-  background-color: #d7d7d7;
-  color: #000;
+  background-color: #d9d9d9;
+  color: #817d7b;
 }
 
 @media (max-width: 860px) {

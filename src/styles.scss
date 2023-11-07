@@ -11,15 +11,6 @@ body {
   height: 100%;
   overflow: auto !important;
 }
-body {
-  background-image: url("./assets/image/corebackground.svg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-clip: border-box;
-}
-
-
 
 ::selection {
   background-color: rgb(214, 35, 65);
