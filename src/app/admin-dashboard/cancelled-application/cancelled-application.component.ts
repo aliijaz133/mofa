@@ -14,12 +14,21 @@ interface ChartData {
   styleUrls: ['./cancelled-application.component.scss']
 })
 export class CancelledApplicationComponent implements OnInit {
+
+  showLoader = false;
+
   @ViewChild('rejectedChart', { static: true }) chartDiv!: ElementRef;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.rejectedChart();
+
+    this.showLoader = true;
+
+    setTimeout(() => {
+      this.showLoader = false;
+    });
   }
 
   rejectedChart() {

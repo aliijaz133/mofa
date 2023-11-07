@@ -8,6 +8,8 @@ import { timeInterval } from 'rxjs';
 })
 export class SettingComponent implements OnInit {
 
+  showLoader = false;
+
   currentTime?: number;
 
   @ViewChild('fileInput', { static: false }) fileInput!: ElementRef;
@@ -19,7 +21,15 @@ export class SettingComponent implements OnInit {
     }, 1);
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+    this.showLoader = true;
+
+    setTimeout(() => {
+      this.showLoader = false;
+    });
+
+  }
 
   openImageChange() {
 

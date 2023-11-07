@@ -11,6 +11,9 @@ am4core.useTheme(am4themes_animated);
   styleUrls: ['./total-application.component.scss']
 })
 export class TotalApplicationComponent implements OnInit {
+
+  showLoader = false;
+
   @ViewChild('chartdiv', { static: true }) chartDiv!: ElementRef;
 
   constructor(private ngZone: NgZone) {
@@ -18,6 +21,12 @@ export class TotalApplicationComponent implements OnInit {
 
   ngOnInit() {
     this.createChart();
+
+    this.showLoader = true;
+
+    setTimeout(() => {
+      this.showLoader = false;
+    })
   }
 
   createChart() {

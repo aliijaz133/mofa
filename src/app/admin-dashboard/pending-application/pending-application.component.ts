@@ -9,12 +9,20 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 })
 export class PendingApplicationComponent implements OnInit {
 
+  showLoader = false;
+
   @ViewChild('pendingChart', { static: true }) chartDiv!: ElementRef;
 
   constructor(private ngZone: NgZone) { }
 
   ngOnInit() {
     this.pendingChart();
+
+    this.showLoader = true;
+
+    setTimeout(() => {
+      this.showLoader = false;
+    });
   }
 
   pendingChart() {

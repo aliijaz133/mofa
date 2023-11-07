@@ -12,6 +12,8 @@ am4core.useTheme(am4themes_animated);
 })
 export class DoneApplicationComponent implements OnInit {
 
+  showLoader = false;
+
   @ViewChild('doneChart', { static: true }) chartDiv!: ElementRef;
 
   constructor(private ngZone: NgZone) {
@@ -19,6 +21,12 @@ export class DoneApplicationComponent implements OnInit {
 
   ngOnInit() {
     this.createChart();
+
+    this.showLoader = true;
+
+    setTimeout(() => {
+      this.showLoader = false;
+    })
   }
 
   createChart() {
@@ -71,7 +79,7 @@ export class DoneApplicationComponent implements OnInit {
     series.stroke = am4core.color("green");
 
     let bullet = series.bullets.create(am4charts.CircleBullet);
-    
+
     bullet.fill = am4core.color("green");
 
     chart.cursor = new am4charts.XYCursor();

@@ -9,6 +9,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class UpdatePasswordComponent implements OnInit {
 
+  showLoader = false
+
   passwordUpdating: FormGroup;
 
   constructor(private fb: FormBuilder, private toastr: ToastrService) {
@@ -22,7 +24,15 @@ export class UpdatePasswordComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+    this.showLoader = true;
+
+    setTimeout(() => {
+      this.showLoader = false;
+    })
+
+  }
 
   userPasswordUpdating() {
     console.log(this.passwordUpdating.value);

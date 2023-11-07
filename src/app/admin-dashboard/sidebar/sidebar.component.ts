@@ -7,15 +7,23 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent implements OnInit {
 
+  showLoader = false;
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+
+    this.showLoader = true;
+
+    setTimeout(() => {
+      this.showLoader = false;
+    })
 
   }
 
 
   logout() {
-    this.router.navigate(['/admin-login/login'], {queryParams: this.logout});
+    this.router.navigate(['/admin-login/login'], { queryParams: this.logout });
   }
 
 

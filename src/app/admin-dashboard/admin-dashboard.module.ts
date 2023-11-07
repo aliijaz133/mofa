@@ -24,6 +24,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { ExportAsModule } from 'ngx-export-as';
+import { LoaderComponent } from './loader/loader.component';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -35,7 +36,8 @@ import { ExportAsModule } from 'ngx-export-as';
     PendingApplicationComponent,
     CancelledApplicationComponent,
     SettingComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,

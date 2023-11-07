@@ -2,7 +2,7 @@
   <app-header></app-header>
   <div class="main-container">
     <app-sidebar></app-sidebar>
-    <div style="margin-left: 10px;">
+    <div style="margin-left: 10px">
       <div class="data-main__container">
         <div class="data-container">
           <div
@@ -14,7 +14,7 @@
           >
             <h3 style="font-weight: 500">Appointment Data Table</h3>
           </div>
-          <div style="display: flex;justify-content: space-between;">
+          <div style="display: flex; justify-content: space-between">
             <input
               type="text"
               id="search"
@@ -52,7 +52,12 @@
           </div>
           <div style="margin: 10px">
             <div class="mat-elevation-z8">
-              <table mat-table [dataSource]="dataSource"  class="table" id="myTableElementId">
+              <table
+                mat-table
+                [dataSource]="dataSource"
+                class="table"
+                id="myTableElementId"
+              >
                 <!-- Position Column -->
                 <ng-container matColumnDef="position">
                   <th mat-header-cell *matHeaderCellDef>No.</th>
@@ -103,3 +108,5 @@
     </div>
   </div>
 </main>
+
+<app-loader *ngIf="showLoader"></app-loader>

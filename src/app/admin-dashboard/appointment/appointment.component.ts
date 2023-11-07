@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ExportAsService, ExportAsConfig } from 'ngx-export-as';
@@ -39,7 +39,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './appointment.component.html',
   styleUrls: ['./appointment.component.scss']
 })
+
 export class AppointmentComponent implements AfterViewInit {
+
+  showLoader = false;
 
   exportAsConfig: ExportAsConfig = {
     type: 'pdf',
@@ -78,9 +81,16 @@ export class AppointmentComponent implements AfterViewInit {
   }
 
   generatePDF() {
-    this.exportAsService.save(this.exportAsConfig, 'Appointment List').subscribe(() => {
-      this.toastr.success("Pdf file has been created successfully.")
+
+    this.showLoader = true;
+    setTimeout(() => {
+      this.showLoader = false;
+      this.exportAsService.save(this.exportAsConfig, 'Appointment List').subscribe(() => {
+        this.toastr.success("Pdf file has been created successfully.")
+      });
     });
+
+
   }
 
   generateDoc() {
