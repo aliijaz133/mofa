@@ -1,23 +1,27 @@
 <main>
   <app-header></app-header>
-  <div>
-    <app-sidebar></app-sidebar>
-  </div>
 
-  <div class="chart-container">
-    <div class="chart-graph">
-      <app-total-application></app-total-application>
+  <div class="main-container">
+    <div>
+      <app-sidebar></app-sidebar>
     </div>
-    <div class="chart-graph">
-      <app-done-application></app-done-application>
-    </div>
-  </div>
-  <div class="chart-container">
-    <div class="chart-graph">
-      <app-pending-application></app-pending-application>
-    </div>
-    <div class="chart-graph">
-      <app-cancelled-application></app-cancelled-application>
+    <div>
+      <div class="chart-container">
+        <div class="chart-graph">
+          <app-total-application></app-total-application>
+        </div>
+        <div class="chart-graph">
+          <app-done-application></app-done-application>
+        </div>
+      </div>
+      <div class="chart-container">
+        <div class="chart-graph">
+          <app-pending-application></app-pending-application>
+        </div>
+        <div class="chart-graph">
+          <app-cancelled-application></app-cancelled-application>
+        </div>
+      </div>
     </div>
   </div>
 </main>

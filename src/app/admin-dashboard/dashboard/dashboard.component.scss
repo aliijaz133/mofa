@@ -2,6 +2,12 @@ main {
   background-color: #f3f3f3;
 }
 
+.main-container {
+  display:flex;
+  max-width: 100%;
+}
+
+
 .chart-container {
   display: flex;
   justify-content: space-evenly;
@@ -12,5 +18,5 @@ main {
   background-color: aliceblue;
   border-radius: 10px;
   border: 2px solid #d3d3d3;
-  width: 47%;
+  width: 100%;
 }

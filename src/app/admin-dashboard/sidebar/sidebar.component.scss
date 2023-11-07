@@ -1,5 +1,13 @@
+main {
+  position: sticky;
+  top: 5%;
+
+}
+
 .offcanvas {
-  width: 300px !important;
+  background-color: aliceblue;
+  border-right: 1px solid #000;
+
 }
 
 .offcanvas-header {
@@ -9,7 +17,12 @@
 }
 
 .offcanvas-body {
+  width: 250px;
+  border-right: 1px solid #000;
   padding: 0% !important;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 2px 2px #000;
+  height: 100vh;
 }
 
 .menu-container {

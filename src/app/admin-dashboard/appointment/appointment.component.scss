@@ -2,6 +2,11 @@ main {
   background-color: #f3f3f3;
 }
 
+.main-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .data-main__container {
     display: flex;
     justify-content: center;
@@ -11,8 +16,4 @@ main {
     display: flex;
     flex-direction: column;
 }
-
-table {
-    width: 700px;
-  }
   

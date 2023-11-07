@@ -1,60 +1,63 @@
 <main>
   <app-header></app-header>
-  <app-sidebar></app-sidebar>
+  <div class="main-container">
+    <app-sidebar></app-sidebar>
+    <div style="margin-left: 10px;">
+      <div>
+        <div class="user-container">
+          <h2 style="text-align: center">User Profile Setting</h2>
 
-  <div style="display: flex; justify-content: center">
-    <div class="user-container">
-      <h2 style="text-align: center">User Profile Setting</h2>
-
-      <div class="user-name-pic">
-        <div class="user-name__container">
-          <div class="name_title">
-            <h3 style="font-weight: 500; margin: 0 0 0px">Name:</h3>
-            <h3 style="margin: 0 0 0px">Admin</h3>
+          <div class="user-name-pic">
+            <div class="user-name__container">
+              <div class="name_title">
+                <h3 style="font-weight: 500; margin: 0 0 0px">Name:</h3>
+                <h3 style="margin: 0 0 0px">Admin</h3>
+              </div>
+              <div class="name_title">
+                <h3 style="font-weight: 500; margin: 0 0 0px">Email:</h3>
+                <h3 style="margin: 0 0 0px">admin@gmail.com</h3>
+              </div>
+              <div class="name_title">
+                <h3 style="font-weight: 500; margin: 0 0 0px">Time Zone:</h3>
+                <h3 style="margin: 0 0 0px">
+                  {{ currentTime | date : "hh : mm : ss a" }}
+                </h3>
+              </div>
+              <div class="name_title">
+                <h3 style="font-weight: 500; margin: 0 0 0px">About me:</h3>
+                <h3 style="margin: 0 0 0px">--none--</h3>
+              </div>
+              <div class="name_title">
+                <h3 style="font-weight: 500; margin: 0 0 0px">Status:</h3>
+                <h3 style="margin: 0 0 0px">Active</h3>
+              </div>
+            </div>
+            <div class="user-pic__container">
+              <img
+                src="../../../assets/image/new_user_avatar.jpg"
+                alt="User Image"
+                width="70%"
+                class="u-pic"
+              />
+              <img
+                src="../../../assets/image/penup.svg"
+                alt="Edit Button"
+                style="
+                  width: 33px;
+                  margin-top: -36px;
+                  margin-left: 84px;
+                  cursor: pointer;
+                "
+                (click)="fileInput.click()"
+              />
+              <input
+                #fileInput
+                type="file"
+                style="display: none"
+                (change)="onFileSelected($event)"
+              />
+            </div>
           </div>
-          <div class="name_title">
-            <h3 style="font-weight: 500; margin: 0 0 0px">Email:</h3>
-            <h3 style="margin: 0 0 0px">admin@gmail.com</h3>
-          </div>
-          <div class="name_title">
-            <h3 style="font-weight: 500; margin: 0 0 0px">Time Zone:</h3>
-            <h3 style="margin: 0 0 0px">
-              {{ currentTime | date : "hh : mm : ss a" }}
-            </h3>
-          </div>
-          <div class="name_title">
-            <h3 style="font-weight: 500; margin: 0 0 0px">About me:</h3>
-            <h3 style="margin: 0 0 0px">--none--</h3>
-          </div>
-          <div class="name_title">
-            <h3 style="font-weight: 500; margin: 0 0 0px">Status:</h3>
-            <h3 style="margin: 0 0 0px">Active</h3>
-          </div>
-        </div>
-        <div class="user-pic__container">
-          <img
-            src="../../../assets/image/new_user_avatar.jpg"
-            alt="User Image"
-            width="70%"
-            class="u-pic"
-          />
-          <img
-            src="../../../assets/image/penup.svg"
-            alt="Edit Button"
-            style="
-              width: 33px;
-              margin-top: -36px;
-              margin-left: 84px;
-              cursor: pointer;
-            "
-            (click)="fileInput.click()"
-          />
-          <input
-            #fileInput
-            type="file"
-            style="display: none"
-            (change)="onFileSelected($event)"
-          />
         </div>
       </div>
     </div>
