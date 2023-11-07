@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
 
   userLogin() {
     if (this.loginForm.value.userEmail === this.email && this.loginForm.value.userPwd === this.password) {
-      this.router.navigate(['/mofa-admin/setting'], { queryParams: this.email.split(this.loginForm.value.userEmail) });
+      this.router.navigate(['/mofa-admin/user-dashboard'], { queryParams: this.email.split(this.loginForm.value.userEmail) });
       this.toastr.success("Successfully Logged In")
     }
     else {

@@ -13,24 +13,10 @@ export class SidebarComponent implements OnInit {
 
   }
 
-  // dashBoard() {
-  //   this.router.navigate(['/mofa-admin/user-dashboard']);
-  // }
 
   logout() {
     this.router.navigate(['/admin-login/login'], {queryParams: this.logout});
   }
 
-  // updatePassword() {
-  //   this.router.navigate(['/mofa-admin/change-password']);
-  // }
-
-  // setting() {
-  //   this.router.navigate(['/mofa-admin/setting']);
-  // }
-
-  // appointment() {
-  //   this.router.navigate(['/mofa-admin/appointment']);
-  // }
 
 }
