@@ -17,7 +17,8 @@ export class HeaderComponent {
   notifications_list: any[]
   today = new Date();
   pipe = new DatePipe('en-US');
-  alert_count: any
+  alert_count: any;
+  showLoader = false;
 
   constructor(public route: ActivatedRoute,
     private router: Router,
@@ -36,6 +37,12 @@ export class HeaderComponent {
     // });
 
     // this.getNotification()
+
+    this.showLoader = true;
+
+    setTimeout(()=>{
+      this.showLoader = false;
+    },2000)
   }
 
 
