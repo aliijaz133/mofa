@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
   menus: any[];
   hide = true;
 
+  showLoader = false;
+
   email: string = "aliijaz@gmail.com";
   password: string = "abcd1234";
 
@@ -31,8 +33,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.showLoader = true;
+    setTimeout(() => {
+      this.showLoader = false;
+    });
   }
+
+
+
 
   userLogin() {
     if (this.loginForm.value.userEmail === this.email && this.loginForm.value.userPwd === this.password) {
