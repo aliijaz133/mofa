@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     this.showLoader = true;
     setTimeout(() => {
       this.showLoader = false;
-    });
+    },2000);
   }
 
 

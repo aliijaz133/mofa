@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit{
 
     setTimeout(() => {
       this.showLoader = false;
-    });
+    },2000);
     
   }
 

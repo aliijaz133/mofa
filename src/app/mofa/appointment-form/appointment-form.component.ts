@@ -112,7 +112,7 @@ export class AppointmentFormComponent implements OnInit {
       setTimeout(() => {
         this.showLoader = false;
         this.router.navigate(['/mofa/home']);
-      }, 3000);
+      }, 2000);
 
       this.toastr.info('This site is automatically reloaded.');
     });

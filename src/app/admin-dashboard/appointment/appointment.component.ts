@@ -88,7 +88,7 @@ export class AppointmentComponent implements AfterViewInit {
       this.exportAsService.save(this.exportAsConfig, 'Appointment List').subscribe(() => {
         this.toastr.success("Pdf file has been created successfully.")
       });
-    });
+    },2000);
 
 
   }

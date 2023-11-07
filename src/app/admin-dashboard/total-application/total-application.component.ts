@@ -26,7 +26,7 @@ export class TotalApplicationComponent implements OnInit {
 
     setTimeout(() => {
       this.showLoader = false;
-    })
+    },2000)
   }
 
   createChart() {

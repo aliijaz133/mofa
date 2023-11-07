@@ -22,7 +22,7 @@ export class PendingApplicationComponent implements OnInit {
 
     setTimeout(() => {
       this.showLoader = false;
-    });
+    },2000);
   }
 
   pendingChart() {

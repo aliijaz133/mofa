@@ -30,7 +30,7 @@ export class UpdatePasswordComponent implements OnInit {
 
     setTimeout(() => {
       this.showLoader = false;
-    })
+    },2000)
 
   }
 

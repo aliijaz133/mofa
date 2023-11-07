@@ -17,7 +17,7 @@ export class SidebarComponent implements OnInit {
 
     setTimeout(() => {
       this.showLoader = false;
-    })
+    },2000)
 
   }
 

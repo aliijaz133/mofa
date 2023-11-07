@@ -28,7 +28,7 @@ export class CancelledApplicationComponent implements OnInit {
 
     setTimeout(() => {
       this.showLoader = false;
-    });
+    },2000);
   }
 
   rejectedChart() {
