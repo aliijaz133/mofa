@@ -16,3 +16,13 @@ main {
     flex-direction: column;
 }
   
+@media (max-width:600px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 60px auto;
+  }
+
+  .me-2 {
+    margin-right: -83.5rem!important;
+}
+}

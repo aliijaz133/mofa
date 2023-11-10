@@ -6,13 +6,14 @@
           <img
             src="../../../assets/image/dashboard_black.svg"
             alt="Dashboard"
+            matTooltip="Dashboard"
           />
           <h4>Dashboard</h4>
         </div>
       </a>
       <a routerLink="/mofa-admin/appointment">
         <div class="logo_title">
-          <img src="../../../assets/image/audit_black.svg" alt="Dashboard" />
+          <img src="../../../assets/image/audit_black.svg" alt="Dashboard" matTooltip="Appointment" />
           <h4>Appointment</h4>
         </div>
       </a>
@@ -20,12 +21,13 @@
         <img
           src="../../../assets/image/accident_reporting_black.svg"
           alt="Dashboard"
+          matTooltip="Reports"
         />
         <h4>Reports</h4>
       </div>
       <a routerLink="/mofa-admin/setting">
         <div class="logo_title">
-          <mat-icon>settings</mat-icon>
+          <mat-icon matTooltip="Setting">settings</mat-icon>
           <h4>Setting</h4>
         </div>
       </a>
@@ -34,12 +36,13 @@
           <img
             src="../../../assets/image/user_lock_blcak.svg"
             alt="Dashboard"
+            matTooltip="Change Password"
           />
           <h4>Change Password</h4>
         </div>
       </a>
       <div class="logo_title" (click)="logout()">
-        <mat-icon>logout</mat-icon>
+        <mat-icon matTooltip="Logout">logout</mat-icon>
         <h4>Logout</h4>
       </div>
     </div>

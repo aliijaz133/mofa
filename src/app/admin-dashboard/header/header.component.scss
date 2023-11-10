@@ -264,17 +264,11 @@ ul li {
   gap: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width:400px) {
   .header-block {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
   }
- 
 }
 
-@media (max-width: 470px) {
-  .menu-btn {
-    position: absolute;
-    right: 0%;
-  }
-}

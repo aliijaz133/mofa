@@ -65,3 +65,32 @@ main {
     width: 120px;
   }
 }
+
+@media (max-width: 600px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 60px auto;
+  }
+
+  .user-container {
+    width: 250px;
+  }
+
+  .name_title {
+    display: grid;
+    grid-template-columns: 48px 148px;
+    column-gap: 20px;
+    row-gap: 20px;
+    border-bottom: 1px solid #d3d3d3;
+  }
+
+  main {
+    height: auto;
+  }
+
+  .f-c {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
