@@ -69,13 +69,13 @@
                 <!-- Name Column -->
                 <ng-container matColumnDef="name">
                   <th mat-header-cell *matHeaderCellDef>Name</th>
-                  <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+                  <td mat-cell *matCellDef="let element" class="text-break">{{ element.name }}</td>
                 </ng-container>
 
                 <!-- CNIC Column -->
                 <ng-container matColumnDef="weight">
                   <th mat-header-cell *matHeaderCellDef>CNIC</th>
-                  <td mat-cell *matCellDef="let element">
+                  <td mat-cell *matCellDef="let element" class="text-break">
                     {{ cnicNumber }}
                   </td>
                 </ng-container>
@@ -83,7 +83,7 @@
                 <!-- Date Column -->
                 <ng-container matColumnDef="symbol">
                   <th mat-header-cell *matHeaderCellDef>Date</th>
-                  <td mat-cell *matCellDef="let element">
+                  <td mat-cell *matCellDef="let element" class="text-break">
                     {{ currentTime | date: "dd-MMM-YYYY" }}
                   </td>
                 </ng-container>
