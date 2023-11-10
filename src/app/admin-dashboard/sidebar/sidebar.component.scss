@@ -69,6 +69,14 @@ a {
     top:auto !important;
   }
 
+.menu-container, .logo_title {
+  display: grid;
+  place-items:center;
+  margin-left: 0% !important;
+  margin-right: 0% !important;
+  padding-bottom: 10px !important;
+}
+
   .offcanvas-body {
     width: 60px;
     border-right: 1px solid #000;
@@ -78,10 +86,6 @@ a {
     height: 100vh;
   }
 
- 
-    .menu-container[_ngcontent-ng-c3694117862] .logo_title {
-      margin-left: 0%;
-      margin-right: 0%;
-    }
+
  
 }
