@@ -72,19 +72,19 @@
                   <td mat-cell *matCellDef="let element">{{ element.name }}</td>
                 </ng-container>
 
-                <!-- Weight Column -->
+                <!-- CNIC Column -->
                 <ng-container matColumnDef="weight">
                   <th mat-header-cell *matHeaderCellDef>CNIC</th>
                   <td mat-cell *matCellDef="let element">
-                    {{ element.weight }}
+                    {{ cnicNumber }}
                   </td>
                 </ng-container>
 
-                <!-- Symbol Column -->
+                <!-- Date Column -->
                 <ng-container matColumnDef="symbol">
                   <th mat-header-cell *matHeaderCellDef>Date</th>
                   <td mat-cell *matCellDef="let element">
-                    {{ element.symbol }}
+                    {{ currentTime | date: "dd-MMM-YYYY" }}
                   </td>
                 </ng-container>
 

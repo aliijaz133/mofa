@@ -44,6 +44,10 @@ export class AppointmentComponent implements AfterViewInit {
 
   showLoader = false;
 
+  currentTime ?: number ;
+
+  cnicNumber ?: number;
+
   exportAsConfig: ExportAsConfig = {
     type: 'pdf',
     options: {
@@ -69,7 +73,13 @@ export class AppointmentComponent implements AfterViewInit {
 
   @ViewChild('myTableElementId') myTableElementId?: ElementRef;
 
-  constructor(private exportAsService: ExportAsService, private toastr: ToastrService) { }
+  constructor(private exportAsService: ExportAsService, private toastr: ToastrService) {
+    setInterval(() => {
+      this.currentTime = Date.now();
+    }, 1);
+
+    this.cnicNumber = 14875626563232;
+   }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;

@@ -14,6 +14,17 @@ main {
 .data-container {
     display: flex;
     flex-direction: column;
+    background-color: #fff;
+    padding: 5px;
+    width: -webkit-fill-available;
+}
+
+th {
+  font-weight: 700;
+}
+
+tr:nth-child(odd) {
+  background-color: aquamarine;
 }
   
 @media (max-width:600px) {
