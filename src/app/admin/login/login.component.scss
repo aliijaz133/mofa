@@ -19,6 +19,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 99;
+  width: max-content;
 }
 
 .secondary-container {
@@ -109,7 +110,6 @@ mat-icon {
   font-weight: bold;
 }
 
-
 .input-group > .form-control {
   border-bottom-left-radius: 20px !important;
   border-top-left-radius: 20px !important;
@@ -133,7 +133,16 @@ mat-icon {
   .secondary-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    max-width: min-content;
+    flex-direction: column;
+  }
+
+  .logo-container {
+    padding: 20px !important;
+  }
+
+  .login-container {
+    display: flex;
+    gap: 10px;
   }
 }
+
