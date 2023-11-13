@@ -10,13 +10,21 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ForgotPasswordComponent implements OnInit {
 
+  showLoader = false;
+
   userEmail: FormControl = new FormControl('', [Validators.required, Validators.email]);
 
   constructor(private dialog: MatDialog, private toastr: ToastrService) {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.showLoader = true;
+
+    setTimeout(() => {
+      this.showLoader = false;
+    }, 1000);
 
   }
 
