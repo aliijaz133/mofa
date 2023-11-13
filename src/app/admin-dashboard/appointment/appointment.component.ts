@@ -44,9 +44,9 @@ export class AppointmentComponent implements AfterViewInit {
 
   showLoader = false;
 
-  currentTime ?: number ;
+  currentTime?: number;
 
-  cnicNumber ?: number;
+  cnicNumber?: number;
 
   exportAsConfig: ExportAsConfig = {
     type: 'pdf',
@@ -79,7 +79,7 @@ export class AppointmentComponent implements AfterViewInit {
     }, 1);
 
     this.cnicNumber = 14875626563232;
-   }
+  }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -98,7 +98,7 @@ export class AppointmentComponent implements AfterViewInit {
       this.exportAsService.save(this.exportAsConfig, 'Appointment List').subscribe(() => {
         this.toastr.success("Pdf file has been created successfully.")
       });
-    },2000);
+    }, 2000);
 
 
   }

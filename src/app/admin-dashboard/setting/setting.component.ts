@@ -27,7 +27,7 @@ export class SettingComponent implements OnInit {
 
     setTimeout(() => {
       this.showLoader = false;
-    },2000);
+    }, 2000);
 
   }
 
