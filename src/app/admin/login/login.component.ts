@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 
 
 
@@ -23,7 +25,7 @@ export class LoginComponent implements OnInit {
   email: string = "aliijaz@gmail.com";
   password: string = "abcd1234";
 
-  constructor(private fb: FormBuilder, private titlePage: Title, private router: Router, private toastr: ToastrService) {
+  constructor(private fb: FormBuilder, private titlePage: Title, private router: Router, private toastr: ToastrService, private dialog: MatDialog) {
     this.loginForm = this.fb.group({
       userEmail: new FormControl('', [Validators.required, Validators.email]),
       userPwd: new FormControl('', [Validators.required, Validators.minLength(8)]),
@@ -52,7 +54,13 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onForgotPassword() {
 
+  openDialog() {
+
+    this.dialog.open(ForgotPasswordComponent);
+  }
+
+  onForgotPassword() {
+    this.router.navigate(['/admin/forgot-password']);
   }
 }

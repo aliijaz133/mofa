@@ -129,6 +129,11 @@ mat-icon {
   outline: none !important;
 }
 
+.forgotPassword {
+  user-select: none;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .secondary-container {
     display: flex;

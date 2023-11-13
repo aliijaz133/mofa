@@ -14,7 +14,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './loader/loader.component';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -35,7 +35,8 @@ import { LoaderComponent } from './loader/loader.component';
     MatRadioModule,
     MatCheckboxModule,
     ToastrModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ]
 })
 export class AdminModule { }
