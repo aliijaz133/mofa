@@ -32,11 +32,11 @@ export class LoginComponent implements OnInit {
     this.titlePage.setTitle('Mofa Sign-In');
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.showLoader = true;
     setTimeout(() => {
       this.showLoader = false;
-    },2000);
+    }, 2000);
   }
 
 

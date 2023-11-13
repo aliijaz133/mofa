@@ -21,7 +21,7 @@ export class SettingComponent implements OnInit {
     }, 1);
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
 
     this.showLoader = true;
 
